@@ -1,0 +1,17 @@
+@mixin crearBotonArt ($colorLetra,$colorFondo,$tamanio,$tamanioLetra){
+    flex-direction: row;
+    background-color: $colorFondo;
+    color:$colorLetra;
+    padding: $tamanio;
+    font-size: $tamanioLetra;
+    text-decoration: none;
+    border:none;
+    align-self: center;
+}
+
+
+@mixin dispositivos($pantalla){
+    @media (min-width:$pantalla){
+        @content;
+    }
+}

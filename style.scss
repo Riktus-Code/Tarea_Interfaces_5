@@ -1,0 +1,232 @@
+@import '_variables.scss';
+@import '_mixins.scss';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    border:0;
+}
+
+.contenedor{
+    margin:0 auto;
+    max-width: 1200px;
+}
+
+
+
+header{
+    background-color: $color_fondo_header;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+
+    .carrito{
+
+        position: relative;
+        
+        .carInterior{
+        display: none;
+        position: absolute;
+        
+        
+        }
+        
+    }
+
+    .carrito:hover .carInterior{
+        display: block;
+        border: 2px solid black;
+        background-color: white;
+    }
+
+    
+    .vaciar{
+        @include crearBotonArt($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
+    }
+    
+}
+
+.fondo{
+    background-image: url(/img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    .principal{
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .buscador{
+            display: flex;
+            flex-direction: row;
+            input{
+                flex-grow: 1;
+            }
+            @include dispositivos($escritorio){
+                width: 300px;
+            }
+
+        }
+    }
+    
+}
+
+.fondo h1{
+    color:$color_letras_head;
+    padding: 10px;
+    
+}
+
+.fondo p{
+    color:$color_letras_head;
+    padding: 10px;
+   
+}
+
+.buscador{
+    padding: 10px;
+    
+}
+
+
+
+.buscador button{
+    @include crearBotonArt($color_letra_boton,$color_fondo_boton_2,$tamanio_boton,$tamanio_letra_boton);
+    background-image: url(/img/lupa.png);
+}
+
+
+.granate {
+    background: linear-gradient(90deg, #7b1fa2, #c2185b, #e53935,#f4511e );
+}
+.granate ul{
+    list-style: none;
+    
+    display: flex;
+    flex-direction: column;
+   @include dispositivos($tablet){
+    flex-direction: row;
+    
+   }
+  
+}
+.granIcon{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+
+.granate ul li{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+
+}
+
+.granate p{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: center;
+    color: $color_letra_nav;
+    text-align: center;
+    padding-left: 10px;
+    
+    
+    
+}
+.granate img{
+    width: 50px;
+    height: 50px;
+   
+}
+
+.h1Articulo{
+    text-align: center;
+    padding: 10px;
+}
+
+.cursos{
+    display :flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  
+     .imagenArt {
+    width: 100%;
+}
+
+    
+}
+.curso{
+   // PADRE
+    display: flex;
+    flex-direction: column;
+    flex-basis: calc((100%/2) - (1rem/2));
+    padding-bottom: 1rem;
+    border: 1px solid grey;
+    
+    margin-bottom: 10px;
+    @include dispositivos($tablet){
+        flex-basis: calc((100%/3) - (2rem/3));
+    }
+    @include dispositivos($escritorio){
+        flex-basis: calc((100%/4) - (3rem/4));
+    }
+   
+    .estrella{
+        align-self: flex-start;
+         padding: 10px;
+    }
+}
+.curso h2{
+    font-size: 10px;
+    @include dispositivos($tablet){
+        font-size: 20px;
+    }
+    color: $color_letra_articulos;
+    padding: 10px
+}
+.curso p{
+    color: $color_letra_articulos;
+    padding: 10px;
+}
+
+
+
+.curso div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    :nth-child(2){
+        font-weight: bold;
+        text-decoration: line-through;
+    }
+}
+
+.btnArt{
+    @include crearBotonArt($color_letra_boton,$color_fondo_boton,$tamanio_boton,$tamanio_letra_boton);
+}
+
+footer{
+    background-color: $color_fondo_footer;
+    color:$color_letra_nav;
+    display :flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.fArt{
+    flex-basis: 1;
+    padding: 10px;
+    @include dispositivos($tablet){
+        flex-basis: calc(100%/2);
+    }
+}
