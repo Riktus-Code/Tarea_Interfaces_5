@@ -8,10 +8,25 @@
     border:none;
     align-self: center;
 }
-
+@mixin crearBotonCarr ($colorLetra,$colorFondo,$tamanio,$tamanioLetra){
+    flex-direction: column;
+    background-color: $colorFondo;
+    color:$colorLetra;
+    padding: $tamanio;
+    font-size: $tamanioLetra;
+    text-decoration: none;
+    border:none;
+    
+}
 
 @mixin dispositivos($pantalla){
     @media (min-width:$pantalla){
+        @content;
+    }
+}
+
+    @mixin dispositivos2($pantalla){
+    @media (max-width:$pantalla){
         @content;
     }
 }

@@ -9,6 +9,7 @@
 }
 
 .contenedor{
+    
     margin:0 auto;
     max-width: 1200px;
 }
@@ -16,6 +17,7 @@
 
 
 header{
+
     background-color: $color_fondo_header;
     padding: 10px;
     display: flex;
@@ -28,44 +30,63 @@ header{
         position: relative;
         
         .carInterior{
+
         display: none;
         position: absolute;
-        
+        right: 0;
+        border: 2px solid black;
         
         }
         
+        .carInterior div{
+           
+            padding: 10px;
+        }
+
     }
 
     .carrito:hover .carInterior{
-        display: block;
+
+        display: flex;
+        flex-direction: row;
         border: 2px solid black;
         background-color: white;
+        
     }
 
     
-    .vaciar{
-        @include crearBotonArt($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
+    .carInterior button{
+        @include crearBotonCarr($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
+        
     }
     
 }
 
 .fondo{
+
     background-image: url(/img/hero.jpg);
     background-size: cover;
     background-position: center;
     height: 400px;
     display: flex;
     justify-content: center;
+
     .principal{
+
         flex-grow: 1;
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         .buscador{
+
             display: flex;
             flex-direction: row;
+
             input{
+
                 flex-grow: 1;
+
             }
             @include dispositivos($escritorio){
                 width: 300px;
@@ -171,8 +192,8 @@ header{
     flex-basis: calc((100%/2) - (1rem/2));
     padding-bottom: 1rem;
     border: 1px solid grey;
-    
     margin-bottom: 10px;
+    
     @include dispositivos($tablet){
         flex-basis: calc((100%/3) - (2rem/3));
     }
@@ -201,6 +222,7 @@ header{
 
 
 .curso div{
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -208,6 +230,7 @@ header{
         font-weight: bold;
         text-decoration: line-through;
     }
+
 }
 
 .btnArt{
@@ -215,6 +238,7 @@ header{
 }
 
 footer{
+
     background-color: $color_fondo_footer;
     color:$color_letra_nav;
     display :flex;
@@ -224,9 +248,11 @@ footer{
 }
 
 .fArt{
+
     flex-basis: 1;
     padding: 10px;
     @include dispositivos($tablet){
         flex-basis: calc(100%/2);
     }
+
 }
