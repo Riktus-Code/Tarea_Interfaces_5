@@ -19,5 +19,9 @@ $escritorio: 780px;
 $tamanio_boton:10px;
 $tamanio_letra_boton:17px;
 
-//imagenes
+//calculos
+$menor-movil: 100%;
+$movil-cal : calc((100%/2) - (1rem/2));
+$tablet-cal : calc((100%/3) - (2rem/3));
+$escritorio-cal: calc((100%/4) - (3rem/4));
 

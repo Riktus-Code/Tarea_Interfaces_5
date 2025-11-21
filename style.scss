@@ -15,7 +15,7 @@
 }
 
 
-
+//Header
 header{
 
     background-color: $color_fondo_header;
@@ -28,40 +28,45 @@ header{
     .carrito{
 
         position: relative;
-        
+
         .carInterior{
-
-        display: none;
+        display: none;       
+        }
+        .carrito:hover .carInterior{
         position: absolute;
-        right: 0;
-        border: 2px solid black;
-        
-        }
-        
-        .carInterior div{
-           
-            padding: 10px;
-        }
-
-    }
-
-    .carrito:hover .carInterior{
-
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         border: 2px solid black;
         background-color: white;
+        right: 0;
         
+    }
+        .carInterior ul{
+            display: flex;
+            list-style: none;
+            flex-direction: row;
+            padding: 10px;
+        }
+        
+        .carInterior ul li{
+            display: flex;
+            flex-direction: column;
+            padding-right: 10px;
+        }
+
+        
+        .carInterior button{
+            @include crearBotonCarr($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
+            
+        }
     }
 
     
-    .carInterior button{
-        @include crearBotonCarr($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
-        
-    }
+
+   
     
 }
-
+//Sección de foto y buscador
 .fondo{
 
     background-image: url(/img/hero.jpg);
@@ -88,7 +93,7 @@ header{
                 flex-grow: 1;
 
             }
-            @include dispositivos($escritorio){
+            @include dispositivos($tablet){
                 width: 300px;
             }
 
@@ -121,10 +126,14 @@ header{
     background-image: url(/img/lupa.png);
 }
 
-
+//Banner de color granate
 .granate {
     background: linear-gradient(90deg, #7b1fa2, #c2185b, #e53935,#f4511e );
+
+
 }
+
+
 .granate ul{
     list-style: none;
     
@@ -136,11 +145,17 @@ header{
    }
   
 }
+
 .granIcon{
     flex-grow: 1;
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    
+}
+
+.granIcon img{
+    width: 50px;
+    height: 50px;
 }
 
 .granate ul li{
@@ -157,17 +172,10 @@ header{
     justify-content: center;
     color: $color_letra_nav;
     text-align: center;
-    padding-left: 10px;
-    
-    
-    
-}
-.granate img{
-    width: 50px;
-    height: 50px;
-   
+    padding-left: 10px;   
 }
 
+//Articulos del main
 .h1Articulo{
     text-align: center;
     padding: 10px;
@@ -182,77 +190,81 @@ header{
      .imagenArt {
     width: 100%;
 }
-
-    
-}
-.curso{
-   // PADRE
-    display: flex;
-    flex-direction: column;
-    flex-basis: calc((100%/2) - (1rem/2));
-    padding-bottom: 1rem;
-    border: 1px solid grey;
-    margin-bottom: 10px;
-    
-    @include dispositivos($tablet){
-        flex-basis: calc((100%/3) - (2rem/3));
+    .curso{
+    // PADRE
+        display: flex;
+        flex-direction: column;
+        flex-basis: $movil-cal;
+        padding-bottom: 1rem;
+        border: 1px solid grey;
+        margin-bottom: 10px;
+        
+        @include dispositivos2($movil){
+            flex-basis: 100%;
+        }
+        @include dispositivos($tablet){
+            flex-basis: $tablet-cal;
+        }
+        @include dispositivos($escritorio){
+            flex-basis: $escritorio-cal;
+        }
     }
-    @include dispositivos($escritorio){
-        flex-basis: calc((100%/4) - (3rem/4));
-    }
-   
-    .estrella{
+        .estrella{
         align-self: flex-start;
          padding: 10px;
     }
-}
-.curso h2{
+
+    .curso h2{
     font-size: 10px;
-    @include dispositivos($tablet){
-        font-size: 20px;
-    }
+        @include dispositivos($tablet){
+            font-size: 20px;
+        }
     color: $color_letra_articulos;
     padding: 10px
-}
-.curso p{
-    color: $color_letra_articulos;
-    padding: 10px;
-}
-
-
-
-.curso div{
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    :nth-child(2){
-        font-weight: bold;
-        text-decoration: line-through;
+    }
+    .curso p{
+        color: $color_letra_articulos;
+        padding: 10px;
     }
 
-}
 
-.btnArt{
-    @include crearBotonArt($color_letra_boton,$color_fondo_boton,$tamanio_boton,$tamanio_letra_boton);
-}
 
+    .curso div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        :nth-child(2){
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+    }
+
+    .btnArt{
+        @include crearBotonArt($color_letra_boton,$color_fondo_boton,$tamanio_boton,$tamanio_letra_boton);
+    }
+    
+}
+//footer
 footer{
 
     background-color: $color_fondo_footer;
     color:$color_letra_nav;
+    
+    .fArt{
+
     display :flex;
     flex-direction: row;
     justify-content: space-between;
-    
-}
-
-.fArt{
-
-    flex-basis: 1;
     padding: 10px;
-    @include dispositivos($tablet){
-        flex-basis: calc(100%/2);
+    
     }
-
+    .fArt article{
+        flex-grow: 1;
+      
+    }
 }
+
+
+
+

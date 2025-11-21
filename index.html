@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarea 5</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 <body>
     <header class="contenedor">
@@ -13,18 +13,19 @@
         <article class="carrito">
             <i class="fa-solid fa-cart-arrow-down"></i>
                 <article class="carInterior">
-                    <div>
-                        <h2>Imagen</h2>
-                        <img src="img/curso1.jpg" alt="">
-                    </div>
-                    <div>
-                        <h2>Nombre</h2>
-                        <p>Css grid y flexbox</p>
-                    </div>
-                    <div>
-                        <h2>Precio</h2>
-                        <p>$15</p>
-                    </div>
+                    <ul style="list-style: none;">
+                        <li>
+                            <h2>Imagen</h2>
+                            <img src="img/curso1.jpg" alt="">
+                        </li>
+                        <li><h2>Nombre</h2>
+                            <p>Css grid y flexbox</p>
+                        </li>
+                        <li>
+                            <h2>Precio</h2>
+                            <p>$15</p>
+                        </li>
+                    </ul>
                    <button class="vaciar">Vaciar carrito</button>
                     
                 </article>
@@ -208,8 +209,10 @@
 
     </main>
     
-    <footer class="contenedor">
-        <article class="fArt">
+    <footer>
+        <div class="contenedor">
+            <div class="fArt">
+                <article >
             <p>Para tu negocio</p>
             <p>Conciertete en Instructor</p>
             <p>Aplicaciones Móviles</p>
@@ -217,11 +220,15 @@
             <p>Temas</p>
         </article>
 
-        <article class="fArt">
+        <article >
             <p>¿Quienes somos?</p>
             <p>Empleo</p>
             <p>Blog</p>
         </article>
+            </div>
+             
+        </div>
+       
     </footer>
 </body>
 </html>

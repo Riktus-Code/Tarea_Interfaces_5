@@ -12,30 +12,62 @@
 header {
   background-color: white;
   padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 header .carrito {
   position: relative;
 }
 header .carrito .carInterior {
   display: none;
+}
+header .carrito .carrito:hover .carInterior {
   position: absolute;
-  right: 0;
-  border: 2px solid black;
-}
-header .carrito .carInterior div {
-  padding: 10px;
-}
-header .carrito:hover .carInterior {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   border: 2px solid black;
   background-color: white;
+  right: 0;
 }
-header .carInterior button {
-  flex-direction: column;
+header .carrito .carInterior ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 10px;
+}
+header .carrito .carInterior ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-right: 10px;
+}
+header .carrito .carInterior button {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: #7b1fa2;
   color: white;
   padding: 10px;
@@ -49,23 +81,43 @@ header .carInterior button {
   background-size: cover;
   background-position: center;
   height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .fondo .principal {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 .fondo .principal .buscador {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 .fondo .principal .buscador input {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
-@media (min-width: 780px) {
+@media (min-width: 480px) {
   .fondo .principal .buscador {
     width: 300px;
   }
@@ -86,58 +138,90 @@ header .carInterior button {
 }
 
 .buscador button {
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background-color: white;
   color: white;
   padding: 10px;
   font-size: 17px;
   text-decoration: none;
   border: none;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   background-image: url(/img/lupa.png);
 }
 
 .granate {
+  background: -webkit-gradient(linear, left top, right top, from(#7b1fa2), color-stop(#c2185b), color-stop(#e53935), to(#f4511e));
   background: linear-gradient(90deg, #7b1fa2, #c2185b, #e53935, #f4511e);
 }
 
 .granate ul {
   list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 @media (min-width: 480px) {
   .granate ul {
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 
 .granIcon {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.granIcon img {
+  width: 50px;
+  height: 50px;
 }
 
 .granate ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 10px;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .granate p {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   color: white;
   text-align: center;
   padding-left: 10px;
-}
-
-.granate img {
-  width: 50px;
-  height: 50px;
 }
 
 .h1Articulo {
@@ -146,89 +230,123 @@ header .carInterior button {
 }
 
 .cursos {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .cursos .imagenArt {
   width: 100%;
 }
-
-.curso {
+.cursos .curso {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-basis: calc(50% - 0.5rem);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-preferred-size: calc(50% - 0.5rem);
+      flex-basis: calc(50% - 0.5rem);
   padding-bottom: 1rem;
   border: 1px solid grey;
   margin-bottom: 10px;
 }
+@media (max-width: 280px) {
+  .cursos .curso {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
 @media (min-width: 480px) {
-  .curso {
-    flex-basis: calc(33.3333333333% - 0.6666666667rem);
+  .cursos .curso {
+    -ms-flex-preferred-size: calc(33.3333333333% - 0.6666666667rem);
+        flex-basis: calc(33.3333333333% - 0.6666666667rem);
   }
 }
 @media (min-width: 780px) {
-  .curso {
-    flex-basis: calc(25% - 0.75rem);
+  .cursos .curso {
+    -ms-flex-preferred-size: calc(25% - 0.75rem);
+        flex-basis: calc(25% - 0.75rem);
   }
 }
-.curso .estrella {
-  align-self: flex-start;
+.cursos .estrella {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   padding: 10px;
 }
-
-.curso h2 {
+.cursos .curso h2 {
   font-size: 10px;
   color: black;
   padding: 10px;
 }
 @media (min-width: 480px) {
-  .curso h2 {
+  .cursos .curso h2 {
     font-size: 20px;
   }
 }
-
-.curso p {
+.cursos .curso p {
   color: black;
   padding: 10px;
 }
-
-.curso div {
+.cursos .curso div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-.curso div :nth-child(2) {
+.cursos .curso div :nth-child(2) {
   font-weight: bold;
   text-decoration: line-through;
 }
-
-.btnArt {
-  flex-direction: row;
+.cursos .btnArt {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   background-color: #438bc7;
   color: white;
   padding: 10px;
   font-size: 17px;
   text-decoration: none;
   border: none;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
 }
 
 footer {
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
 }
-
-.fArt {
-  flex-basis: 1;
+footer .fArt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 10px;
 }
-@media (min-width: 480px) {
-  .fArt {
-    flex-basis: 50%;
-  }
+footer .fArt article {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }

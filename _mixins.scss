@@ -1,3 +1,4 @@
+//Creación de botones
 @mixin crearBotonArt ($colorLetra,$colorFondo,$tamanio,$tamanioLetra){
     flex-direction: row;
     background-color: $colorFondo;
@@ -8,6 +9,7 @@
     border:none;
     align-self: center;
 }
+
 @mixin crearBotonCarr ($colorLetra,$colorFondo,$tamanio,$tamanioLetra){
     flex-direction: column;
     background-color: $colorFondo;
@@ -18,7 +20,7 @@
     border:none;
     
 }
-
+//creacion de media query para diferentes dispositivos
 @mixin dispositivos($pantalla){
     @media (min-width:$pantalla){
         @content;
@@ -26,7 +28,7 @@
 }
 
     @mixin dispositivos2($pantalla){
-    @media (max-width:$pantalla){
-        @content;
+        @media (max-width:$pantalla){
+            @content;
     }
 }
