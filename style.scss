@@ -29,7 +29,9 @@ header{
 
         position: relative;
 
-        .carInterior{
+       
+    }
+     .carInterior{
         display: none;       
         }
         .carrito:hover .carInterior{
@@ -59,7 +61,6 @@ header{
             @include crearBotonCarr($color_letra_boton,$color_fondo_btn2,$tamanio_boton,$tamanio_letra_boton);
             
         }
-    }
 
     
 
@@ -261,7 +262,9 @@ footer{
     }
     .fArt article{
         flex-grow: 1;
-      
+       @include dispositivos($escritorio){
+        flex-basis: calc(100%/2);
+       }
     }
 }
 
